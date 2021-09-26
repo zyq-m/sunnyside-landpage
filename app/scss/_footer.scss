@@ -1,0 +1,50 @@
+.footer {
+    background-color: $darkModerateCyan ;
+    padding: 3.9375rem 0 4.8125rem;
+
+    @media (min-width: 75em) { padding: 4.375rem; }
+
+    .content {
+        width: 100%;
+        max-width: 23.4375rem;
+        margin-inline: auto;
+        text-align: center;
+
+        .logo {
+            path { fill: $darkDesaturatedCyan; }
+            margin-bottom: 2.5rem;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-evenly;
+            color: $darkDesaturatedCyan;
+            margin-bottom: 5.3125rem;
+            opacity: 0.8;
+
+            a:hover {
+                color: $white;
+                transition: color 200ms ease-in-out;
+            }
+        }
+
+        .social {
+            display: inline-flex;
+            gap: 1.875rem;
+            align-items: center;
+
+            .icon {
+                cursor: pointer;
+                
+                path {
+                    fill: $darkDesaturatedCyan;
+
+                    &:hover {
+                        fill: $white;
+                        transition: fill 200ms ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}

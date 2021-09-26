@@ -1,0 +1,119 @@
+.hero {
+
+    &__bg {
+        padding-block: 42%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &--transform { background-image: url(../images/mobile/image-transform.jpg); }
+        &--standout { background-image: url(../images/mobile/image-stand-out.jpg) ;}
+        &--graphic { background-image: url(../images/mobile/image-graphic-design.jpg) ;}
+        &--photography { background-image: url(../images/mobile/image-photography.jpg) ;}
+
+        @media (min-width: 75em) { // laptop vw - 1200px
+            &--transform { background-image: url(../images/desktop/image-transform.jpg); }
+            &--standout { background-image: url(../images/desktop/image-stand-out.jpg) ;}
+            &--graphic { background-image: url(../images/desktop/image-graphic-design.jpg) ;}
+            &--photography { background-image: url(../images/desktop/image-photography.jpg) ;}
+        }
+
+        &--graphic,
+        &--photography {
+            position: relative;
+            padding-block: 80%;
+
+            @media (min-width: 75em) { padding-block: 42%; }
+        }
+    }
+
+    &__text {
+        width: 74%;
+        max-width: 23.5rem;
+        margin: auto;
+        padding-block: 4.375rem;
+
+        @media (min-width: 48em) {
+            text-align: left;
+            padding-block: 0;
+        }
+
+        h2 {
+            color: $darkdesaturatedBlue;
+            margin-bottom: 1.2em;
+            font-size: clamp(1.4em, 2.7vw, 1.8em);
+        }
+
+        p {
+            color: $darkGrayBlue;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            position: relative;
+            color: $darkdesaturatedBlue;
+            font-family: $fraunces;
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                height: 0.6em;
+                width: 117%;
+                transform: translateX(-50%);
+                z-index: -1;
+                border-radius: 3em;
+                opacity: 0.3;
+
+                transition: opacity 250ms ease-in-out;
+            }
+
+            &:hover::before { opacity: 1; }
+        }
+
+        .transform::before { background-color: $yellow; }
+        .standout::before { background-color: $softRed; }
+    }
+
+    &__text-within {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        width: 83%;
+        max-width: 20rem;
+        transform: translateX(-50%);
+
+        &--graphic { color: $darkDesaturatedCyan; }
+        &--photography { color: $darkBlue; }
+
+        h2 {
+            margin-bottom: 2.25rem;
+        }
+    }
+
+    @media (min-width: 48em) { // tablet vw - 768px
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 41%) 1fr;
+        grid-template-areas: 
+            "transform-txt transform"
+            "standout standout-txt"
+            "graphic photography";
+
+        &__bg {
+            &--transform { grid-area: transform; }
+            &--standout { grid-area: standout; }
+            &--graphic { grid-area: graphic; }
+            &--photography { grid-area: photography; }
+        }
+
+        &__text {
+            &--transform { grid-area: transform-txt; }
+            &--standout { grid-area: standout-txt; }
+        }
+    }
+}

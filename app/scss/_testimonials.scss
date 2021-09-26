@@ -1,0 +1,67 @@
+// spacing
+$sp-m: 4.0625rem; // 65px
+
+.testimonials {
+    text-align: center;
+    padding: $sp-m 0 5.625rem;
+
+    @media (min-width: 75em) {
+        padding: 10rem 0;
+    }
+
+    h2 {
+        font-size: 1rem;
+        color: $darkGrayBlue;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: clamp($sp-m, 6vw, 5rem);
+    }
+
+    &__box {
+        display: flex;
+        max-width: 62rem;
+        margin-inline: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: $sp-m;
+
+        @media (min-width: 48em) { flex-direction: row; }
+        @media (min-width: 75em) {
+            flex-wrap: nowrap;
+            gap: unset;
+        }
+    }
+
+    &__items {
+        margin-inline: auto;
+        width: 74%;
+        max-width: 29ch;
+
+        &__profile {
+            display: block;
+            margin-inline: auto;
+            margin-bottom: clamp(2.1875rem, 4.5vw, 3.75rem);
+            max-width: 4.678rem;
+            border-radius: 3rem;
+        }
+
+        article {
+            
+            p {
+                color: $veryDarkGrayBlue;
+                margin-bottom: clamp(2.5rem, 5vw, 4.1875rem);
+            }
+
+            h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.7rem;
+            }
+
+            div {
+                font-size: 0.875rem;
+                color: $grayishBlue;
+            }
+        }
+    }
+}

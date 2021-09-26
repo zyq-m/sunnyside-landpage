@@ -1,0 +1,68 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: $barlow;
+    font-size: $font-m;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $fraunces;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+h1,
+h2,
+h3,
+p { 
+    margin: 0; 
+}
+
+p {
+    font-size: 0.9375rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    line-height: normal;
+}
+
+.flex {
+    display: flex;
+
+    &-fd-c {
+        flex-direction: column;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.txt-c { text-align: center; }
+
+// .container {
+//     padding-inline: $p-m;
+// }
